@@ -1,8 +1,80 @@
 html,
 body {
     margin: 0;
+    padding: 0;
+    // background-color: #eef0f4;
+    background-color: #f5f5f5;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
 }
 
 * {
     box-sizing: border-box;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.addToList {
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px 0;
+    padding: 20px;
+    border: 2px solid #737373;
+    border-radius: 10px;
+}
+
+.addToList__picture {
+    width: 100px;
+    height: 100px;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.addToList__input {
+    background-color: #dce1eb;
+}
+
+.addToList__button {
+    color: #f5f5f5;
+    background-color: #ac485a;
+    cursor: pointer;
+    transition: opacity 0.2s ease-out;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.addToList__input,
+.addToList__button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-family: inherit;
+    // outline: none;
+    appearance: none;
+    border: none;
+    border-radius: 8px;
 }
