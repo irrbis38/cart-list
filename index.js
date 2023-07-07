@@ -18,18 +18,18 @@ function initApp() {
 
     // console.log(database);
 
-    const addToListButton = document.querySelector(".addToList__button");
-    const addToListInput = document.querySelector(".addToList__input");
+    const cartListButton = document.querySelector(".cartList__button");
+    const cartListInput = document.querySelector(".cartList__input");
 
     function handleInput() {
-        const inputValue = addToListInput.value;
+        const inputValue = cartListInput.value;
         push(shopingListInDB, inputValue);
-        addToListInput.value = "";
+        cartListInput.value = "";
     }
 
-    addToListButton.addEventListener("click", handleInput);
+    cartListButton.addEventListener("click", handleInput);
 
-    addToListInput.addEventListener("keydown", (e) => {
+    cartListInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
             handleInput();
         }

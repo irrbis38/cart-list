@@ -43,7 +43,7 @@ body {
           align-items: center;
 }
 
-.addToList {
+.cartList {
   max-width: 320px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,33 +64,33 @@ body {
   border-radius: 10px;
 }
 
-.addToList__picture {
+.cartList__picture {
   width: 100px;
   height: 100px;
 }
-.addToList__picture img {
+.cartList__picture img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.addToList__input {
+.cartList__input {
   background-color: #dce1eb;
 }
 
-.addToList__button {
+.cartList__button {
   color: #f5f5f5;
   background-color: #ac485a;
   cursor: pointer;
   -webkit-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
-.addToList__button:hover {
+.cartList__button:hover {
   opacity: 0.8;
 }
 
-.addToList__input,
-.addToList__button {
+.cartList__input,
+.cartList__button {
   display: block;
   width: 100%;
   padding: 15px;

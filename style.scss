@@ -28,7 +28,7 @@ body {
     align-items: center;
 }
 
-.addToList {
+.cartList {
     max-width: 320px;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ body {
     border-radius: 10px;
 }
 
-.addToList__picture {
+.cartList__picture {
     width: 100px;
     height: 100px;
 
@@ -51,11 +51,11 @@ body {
     }
 }
 
-.addToList__input {
+.cartList__input {
     background-color: #dce1eb;
 }
 
-.addToList__button {
+.cartList__button {
     color: #f5f5f5;
     background-color: #ac485a;
     cursor: pointer;
@@ -66,8 +66,8 @@ body {
     }
 }
 
-.addToList__input,
-.addToList__button {
+.cartList__input,
+.cartList__button {
     display: block;
     width: 100%;
     padding: 15px;
