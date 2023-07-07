@@ -6,6 +6,7 @@ import {
     ref,
     push,
     onValue,
+    remove,
 } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
 
 function initApp() {
@@ -51,18 +52,21 @@ function initApp() {
         const listArray = Object.entries(snapshot.val());
 
         // render array of values
+        const fragment = document.createDocumentFragment();
         listArray.forEach((item) =>
-            appendNewItemToShoppingList(item, shoppingList)
+            appendNewItemToShoppingList(fragment, item)
         );
+        shoppingList.append(fragment);
     });
 
-    function appendNewItemToShoppingList(item, listEL) {
+    function appendNewItemToShoppingList(item) {
         const { 0: id, 1: value } = item;
         const li = document.createElement("LI");
         li.classList.add("shoppingList__item");
         li.textContent = value;
         li.dataset.id = id;
-        listEL.append(li);
+        fragment.append(li);
+        li.addEventListener("click", (e) => console.log(e.target));
     }
 
     function clearInputFiled(elements) {

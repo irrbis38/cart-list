@@ -7,15 +7,9 @@ body {
 
 body {
   min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-family: "Rubik", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -23,41 +17,22 @@ body {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .app {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .shoppingList {
   max-width: 320px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 12px 0;
   padding: 20px;
   border: 2px solid #737373;
@@ -82,7 +57,6 @@ body {
   color: #f5f5f5;
   background-color: #ac485a;
   cursor: pointer;
-  -webkit-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
 }
 .shoppingList__button:hover {
@@ -105,11 +79,8 @@ body {
 
 .shoppingList__list {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   gap: 10px;
   padding: 0;
   margin: 0;
@@ -117,13 +88,10 @@ body {
 }
 
 .shoppingList__item {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   padding: 15px;
   border-radius: 8px;
   text-align: center;
   background-color: #fffdf8;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
