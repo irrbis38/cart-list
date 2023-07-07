@@ -29,15 +29,18 @@ function initApp() {
 
     function handleInput(elements) {
         const { shoppingListInput } = elements;
+        const inputValue = shoppingListInput.value;
 
-        // clear shopping list
-        clearShoppingList();
+        if (inputValue !== "") {
+            // clear shopping list
+            clearShoppingList();
 
-        // push new value to database
-        push(shopingListInDB, shoppingListInput.value);
+            // push new value to database
+            push(shopingListInDB, inputValue);
 
-        // clear input field
-        clearInputFiled(elements);
+            // clear input field
+            clearInputFiled(elements);
+        }
     }
 
     onValue(shopingListInDB, function (snapshot) {
@@ -45,18 +48,20 @@ function initApp() {
         clearShoppingList();
 
         //get value from database and convert to array
-        const shoppingListArray = Object.values(snapshot.val());
+        const listArray = Object.entries(snapshot.val());
 
         // render array of values
-        shoppingListArray.forEach((value) =>
-            appendNewItemToShoppingList(value, shoppingList)
+        listArray.forEach((item) =>
+            appendNewItemToShoppingList(item, shoppingList)
         );
     });
 
-    function appendNewItemToShoppingList(value, listEL) {
+    function appendNewItemToShoppingList(item, listEL) {
+        const { 0: id, 1: value } = item;
         const li = document.createElement("LI");
         li.classList.add("shoppingList__item");
         li.textContent = value;
+        li.dataset.id = id;
         listEL.append(li);
     }
 
