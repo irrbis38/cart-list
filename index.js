@@ -45,28 +45,37 @@ function initApp() {
     }
 
     onValue(shopingListInDB, function (snapshot) {
-        // clear shopping list
-        clearShoppingList();
+        if (snapshot.exists()) {
+            // clear shopping list
+            clearShoppingList();
 
-        //get value from database and convert to array
-        const listArray = Object.entries(snapshot.val());
+            //get value from database and convert to array
+            const listArray = Object.entries(snapshot.val());
 
-        // render array of values
-        const fragment = document.createDocumentFragment();
-        listArray.forEach((item) =>
-            appendNewItemToShoppingList(fragment, item)
-        );
-        shoppingList.append(fragment);
+            // render array of values
+            const fragment = document.createDocumentFragment();
+            listArray.forEach((item) =>
+                appendNewItemToShoppingList(fragment, item)
+            );
+            shoppingList.append(fragment);
+        } else {
+            shoppingList.innerHTML = "No items here... yet";
+        }
     });
 
-    function appendNewItemToShoppingList(item) {
+    function appendNewItemToShoppingList(fragment, item) {
         const { 0: id, 1: value } = item;
         const li = document.createElement("LI");
         li.classList.add("shoppingList__item");
         li.textContent = value;
         li.dataset.id = id;
         fragment.append(li);
-        li.addEventListener("click", (e) => console.log(e.target));
+        li.addEventListener("click", () => {
+            const exactLocationOfIndexDB = ref(database, `shopingList/${id}`);
+            remove(exactLocationOfIndexDB).then(() => {
+                // console.log("data removed")
+            });
+        });
     }
 
     function clearInputFiled(elements) {
