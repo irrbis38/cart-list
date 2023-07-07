@@ -18,20 +18,49 @@ function initApp() {
 
     // console.log(database);
 
-    const cartListButton = document.querySelector(".cartList__button");
-    const cartListInput = document.querySelector(".cartList__input");
+    const shoppingListButton = document.querySelector(".shoppingList__button");
+    const shoppingListInput = document.querySelector(".shoppingList__input");
+    const shoppingList = document.querySelector(".shoppingList__list");
 
-    function handleInput() {
-        const inputValue = cartListInput.value;
-        push(shopingListInDB, inputValue);
-        cartListInput.value = "";
+    const elements = {
+        shoppingListButton,
+        shoppingListInput,
+        shoppingList,
+    };
+
+    function handleInput(elements) {
+        const { shoppingListInput } = elements;
+        // push new value to database
+        push(shopingListInDB, shoppingListInput);
+
+        // create new item and append to shopping list
+        appendNewItemToShoppingList(elements);
+
+        // clear input field
+        clearInputFiled(elements);
     }
 
-    cartListButton.addEventListener("click", handleInput);
+    function appendNewItemToShoppingList(elements) {
+        const { shoppingListInput, shoppingList } = elements;
+        const inputValue = shoppingListInput.value;
+        const li = document.createElement("LI");
+        li.classList.add("shoppingList__item");
+        li.textContent = inputValue;
+        shoppingList.append(li);
+    }
 
-    cartListInput.addEventListener("keydown", (e) => {
+    function clearInputFiled(elements) {
+        const { shoppingListInput } = elements;
+        shoppingListInput.value = "";
+    }
+
+    shoppingListButton.addEventListener("click", () => {
+        handleInput(elements);
+    });
+
+    shoppingListInput.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
-            handleInput();
+            handleInput(elements);
         }
     });
 }

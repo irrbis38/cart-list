@@ -28,7 +28,7 @@ body {
     align-items: center;
 }
 
-.cartList {
+.shoppingList {
     max-width: 320px;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ body {
     border-radius: 10px;
 }
 
-.cartList__picture {
+.shoppingList__picture {
     width: 100px;
     height: 100px;
 
@@ -51,11 +51,11 @@ body {
     }
 }
 
-.cartList__input {
+.shoppingList__input {
     background-color: #dce1eb;
 }
 
-.cartList__button {
+.shoppingList__button {
     color: #f5f5f5;
     background-color: #ac485a;
     cursor: pointer;
@@ -66,8 +66,8 @@ body {
     }
 }
 
-.cartList__input,
-.cartList__button {
+.shoppingList__input,
+.shoppingList__button {
     display: block;
     width: 100%;
     padding: 15px;
