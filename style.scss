@@ -4,6 +4,7 @@ body {
     padding: 0;
     // background-color: #eef0f4;
     background-color: #f5f5f5;
+    user-select: none;
 }
 
 body {
@@ -53,6 +54,10 @@ body {
 
 .shoppingList__input {
     background-color: #dce1eb;
+
+    &::placeholder {
+        font-size: 14px;
+    }
 }
 
 .shoppingList__button {
@@ -96,4 +101,10 @@ body {
     text-align: center;
     background-color: #fffdf8;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s ease-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ffecc7;
+    }
 }
